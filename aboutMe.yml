@@ -2,7 +2,7 @@ name: Halley Fu
 studentNumber: z5359816
 officialEmail: z5359816@unsw.edu.au
 contactEmail: # don't write on this line
-  firstBit: firstName.Lastname # halley.fu
+  firstBit: halley.fu
   otherBit: gmail.com
 # accounts
 stackOverflowLink: https://stackoverflow.com/users/16123502/halleyfu

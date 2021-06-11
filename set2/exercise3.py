@@ -32,16 +32,15 @@ def fix_it(moves=True, should_move=True):
     if moves == True:
         if should_move == True:
             return "No Problem"
-        else:
-            should_move == True
+        else: should_move == True
         return "Duct Tape"
 
     if moves == False:
         if should_move == False:
             return "No Problem"
-        else:
-            should_move
-        return
+        else: should_move == True
+        return "WD-40"
+    if moves == 
 
 
 def loops_1a():

@@ -14,15 +14,15 @@ def getLetter(index):
 
 
 def set2exersise2():
-    indices = [12, 2, 26, 7, 0, 12, 12, 4, 17]
+    indices = [12, 2, 26, 7, 0, 4, 17]
     wordArray = map(getLetter, indices)
     wordArray[0] = wordArray[0].upper()
     wordArray[1] = wordArray[1].upper()
-    wordArray[3} = wordArray[3].upper()
+    wordArray[3] = wordArray[3].upper()
     secret_word="".join(wordArray)
     print(secret_word)
     return secret_word
 
 
 if __name__ == "__main__":
-    print(set2exersise2()) 
+    print(set2exersise2())

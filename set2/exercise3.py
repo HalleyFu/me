@@ -10,10 +10,8 @@ def is_odd(a_number):
     if a_number % 2 == 0:
         return False
 
-    else :
+    else:
         return True
-
-    return 
 
 
 def fix_it(moves=True, should_move=True):
@@ -28,10 +26,22 @@ def fix_it(moves=True, should_move=True):
     "Duct Tape"
     "No Problem"
 
-    Most people write this function with 4 return statements. 
+    Most people write this function with 4 return statements.
     As an extra challenge, see if you can get that down to three.
     """
-    return None
+    if moves == True:
+        if should_move == True:
+            return "No Problem"
+        else:
+            should_move == True
+        return "Duct Tape"
+
+    if moves == False:
+        if should_move == False:
+            return "No Problem"
+        else:
+            should_move
+        return
 
 
 def loops_1a():

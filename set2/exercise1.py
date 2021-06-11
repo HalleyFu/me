@@ -15,17 +15,20 @@ print("hello! Let's get started")  # it printed "hello! Let's get started"
 # and it'll put a list of strings into it.
 some_words = ['what', 'does', 'this', 'line', 'do', '?']
 
-# I think it will print the string of words.
+# I think it will print some_words using the variable word
 for word in some_words:
     print(word)
 
+# I think it will print some words using the variable x
 for x in some_words:
     print(x)
 
 print(some_words)
 
+# I think it won't print some_words contains more than 3 words
 if len(some_words) > 3:
     print("some_words contains more than 3 words")
+
 
 def usefulFunction():
     """

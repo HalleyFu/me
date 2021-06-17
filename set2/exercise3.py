@@ -34,14 +34,14 @@ def fix_it(moves=True, should_move=True):
             return "No Problem"
         else:
             should_move == False
-        return "Duct Tape"
+        return "WD-40"
 
     if moves == False:
-        if should_move == True:
+        if should_move == False:
             return "No Problem"
         else:
             should_move == False
-        return "WD-40"
+        return "Duct Tape"
 
 
 def loops_1a():
@@ -51,9 +51,11 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    stars = ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"]
-    for a in stars:
-        return print(a)
+    star_list = []
+    for i in range(10):
+        star_list.append("*")
+
+    return star_list
 
 
 def loops_1c(number_of_items=5, symbol="#"):
@@ -84,7 +86,11 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    star_square = []
+    for j in range(10):
+        star_square.append(loops_1c(number_of_items=10, symbol="*"))
+
+    return star_square
 
 
 def loops_3():

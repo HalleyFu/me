@@ -33,14 +33,14 @@ def fix_it(moves=True, should_move=True):
         if should_move == True:
             return "No Problem"
         else:
-            should_move == True
+            should_move == False
         return "Duct Tape"
 
     if moves == False:
-        if should_move == False:
+        if should_move == True:
             return "No Problem"
         else:
-            should_move == True
+            should_move == False
         return "WD-40"
 
 

@@ -54,7 +54,6 @@ def loops_1a():
     star_list = []
     for i in range(10):
         star_list.append("*")
-
     return star_list
 
 
@@ -65,7 +64,10 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+    number_of_items = [0, 1, 2, 3, 4]
+    for i in range(5):
+        number_of_items.append("#")
+    return number_of_items
 
 
 def loops_2():

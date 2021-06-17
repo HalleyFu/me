@@ -145,7 +145,7 @@ def loops_4():
     """
     number_square = []
     for i in range(10):
-        number_square.append(range(10))
+        number_square.append(str(i))
 
     return number_square
 

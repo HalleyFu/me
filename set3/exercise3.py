@@ -29,7 +29,9 @@ def advancedGuessingGame():
     print("A number between _ and _ ?")
     lowerbound = input("Enter a lowerbound: ")
     upperBound = input("Enter an upperbound: ")
-    print("Now, a number between {} and {} ?".format(lowerbound)(upperBound))
+    print(f"Now, a number between {lowerbound} and {upperBound} ?")
+    guessedNumber = input("guessednumber: ")
+
     upperBound = int(upperBound)
     lowerbound = int(lowerbound)
 
@@ -38,13 +40,10 @@ def advancedGuessingGame():
     guessed = False
 
     while not guessed:
-
         ValueError
         print("Choose a better number mate!")
         guessedNumber = int(input("Guess a number: "))
-        print(
-            "You guessed {},".format(guessedNumber),
-        )
+        print(f"You guessed {guessedNumber},")
         if guessedNumber == actualNumber:
             print("You got it!! It was {}".format(actualNumber))
             guessed = True

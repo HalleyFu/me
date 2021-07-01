@@ -3,6 +3,8 @@
 
 
 import math
+import random
+from typing import Sequence
 
 # import time
 
@@ -28,8 +30,36 @@ def binary_search(low, high, actual_number):
     guess = 0
 
     # Write your code in here
+    print("Welcome to the guessing game!")
+    print("A number between _ and _ ?")
+    low = input("Enter a low: ")
+    high = input("Enter an high: ")
 
-    return {"guess": guess, "tries": tries}
+    print(f"Now, a number between {low} and {high} ?")
+    actual_number = input("actual_number: ")
+
+    high = int(high)
+    low = int(low)
+
+    actual_number = random.randint(low, high)
+
+    actual_number = False
+    low = 0
+    high = 100
+    while low <= high:
+        mid = low + high // 2
+        mid = Sequence[mid]
+        if mid == actual_number:
+            return mid
+        elif actual_number < mid:
+            high = mid - 1
+        else:
+            low = mid + 1
+        return None
+
+    actual_number_a = 12
+
+    print(binary_search(actual_number_a))
 
 
 if __name__ == "__main__":

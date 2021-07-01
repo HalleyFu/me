@@ -30,15 +30,14 @@ def binary_search(low, high, actual_number):
 
     # Write your code in here
     print("Welcome to the guessing game!")
-
     print(f"{guess} a number between {low} and {high} ?")
     actual_number = 5
-
     actual_number = False
     low = 1
     high = 100
+
     while low <= high:
-        mid = low + (high - low) // 2
+        mid = low + high // 2
         mid_value = Sequence[mid]
         if mid_value == actual_number:
             return mid
@@ -46,7 +45,7 @@ def binary_search(low, high, actual_number):
             high = mid - 1
         else:
             low = mid + 1
-        return None
+        print("Guess again.")
 
     print(binary_search(actual_number))
 

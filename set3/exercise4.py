@@ -29,29 +29,16 @@ def binary_search(low, high, actual_number):
     guess = 0
 
     # Write your code in here
-    print("Welcome to the guessing game!")
-    print(f"Guess a number between {low} and {high} ?")
-    guess = input("guess: ")
-
-    
-    low = 1
-    high = 100
 
     while low <= high:
-        mid = (low + high) // 2
-        if mid < actual_number:
-            low = mid + 1
-        elif mid > actual_number:
-            high = mid - 1
+        guess = (low + high) // 2
+        if guess < actual_number:
+            low = guess + 1
+        elif guess > actual_number:
+            high = guess - 1
         else:
-            return mid
-    return -1
-        actual_number
-
-        result = binary_search(low, high, actual_number)
-
-    if result != -1:
-        print ("ele")
+            return {"guess": guess, "tries": tries}
+        tries += 1
 
 
 if __name__ == "__main__":

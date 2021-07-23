@@ -37,7 +37,11 @@ def list_please() -> list:
 
 def int_list_please() -> list:
     """Returns a list of integers, any integers are fine."""
-    return None
+    list_of_integers = []
+
+    list_of_integers = int[1, 2, 3, 4]
+
+    return list_of_integers
 
 
 def string_list_please() -> list:

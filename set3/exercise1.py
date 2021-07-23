@@ -87,7 +87,19 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-
+    while True:
+        try:
+            a_number = int(input(f"pick a number between {low} and {high}: "))
+            
+        except ValueError:
+            print(f"Please choose an integer between {low} and {high}")
+        if low < a_number < high:
+            print(f"Well Done! {a_number} looks good.")
+            return a_number
+        else:
+            print(f"{a_number} isn't between {low} and {high}")
+    
+           
 
 if __name__ == "__main__":
     # this section does a quick test on your results and prints them nicely.

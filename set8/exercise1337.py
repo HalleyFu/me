@@ -41,28 +41,45 @@ def int_list_please() -> list:
 
     list_of_integers = [1, 2, 3]
 
-    return int(list_of_integers)
+    return list_of_integers
 
 
 def string_list_please() -> list:
     """Returns a list of strings, any string are fine."""
-    return None
+
+    string_list = []
+
+    string_list = ["any", "fine", "is"]
+
+    return string_list
 
 
 def dictionary_please() -> dict:
     """Returns a dictionary, anything you like."""
-    return None
+    dictionary = {"Name": "Halley"}
+    return dictionary
 
 
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
-    well_is_it = None
+    well_is_it = input()
+    if True:
+        some_number == 
+        print("True")
+    else:
+        print("False")
+
     return well_is_it
 
 
 def take_five(some_number) -> int:
     """Subtracts 5 from some_number."""
-    return None
+
+    a = some_number
+    b = 5
+
+    result = a - b
+    return (result)
 
 
 def greet(name="Towering Timmy") -> str:
@@ -71,7 +88,11 @@ def greet(name="Towering Timmy") -> str:
     E.g. if given as "Towering Timmy" it should
          return "Well hello, Towering Timmy"
     """
-    return None
+    input_name = (input())
+
+    message = (f"Well hello, {input_name}")
+
+    return message
 
 
 def one_counter(input_list=[1, 4, 1, 5, 1, 1]) -> int:

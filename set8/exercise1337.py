@@ -63,12 +63,6 @@ def dictionary_please() -> dict:
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
     well_is_it = input()
-    if True:
-        some_number == 
-        print("True")
-    else:
-        print("False")
-
     return well_is_it
 
 
@@ -79,7 +73,7 @@ def take_five(some_number) -> int:
     b = 5
 
     result = a - b
-    return (result)
+    return result
 
 
 def greet(name="Towering Timmy") -> str:
@@ -88,9 +82,9 @@ def greet(name="Towering Timmy") -> str:
     E.g. if given as "Towering Timmy" it should
          return "Well hello, Towering Timmy"
     """
-    input_name = (input())
+    input_name = str(input())
 
-    message = (f"Well hello, {input_name}")
+    message = f"Well hello, {input_name}"
 
     return message
 
@@ -109,9 +103,9 @@ def n_counter(search_for_this, input_list=[1, 4, 1, 5, 1, 1]) -> int:
     """Count the number of times search_for_this shows up in the input_list.
     Return an integer.
     """
-    count = None
+    count = input_list.count("search_for_this")
 
-    return count
+    return int(count)
 
 
 def fizz_buzz() -> List:
@@ -133,9 +127,15 @@ def fizz_buzz() -> List:
          'FizzBuzz', 16, 17, ...]
     """
     fizz_buzz_list = []
-    # your code here
-
-    return fizz_buzz_list
+    for fizz_buzz_list in range[100]:
+        if fizz_buzz_list % 3 == 0 and fizz_buzz_list % 5 == 0:
+            print("FizzBuzz")
+        elif fizz_buzz_list % 3 == 0:
+            print("Fizz")
+        elif fizz_buzz_list % 5 == 0:
+            print("Buzz")
+        else:
+            return fizz_buzz_list
 
 
 def set_it_on_fire(input_string="very naughty boy") -> str:
@@ -149,8 +149,15 @@ def set_it_on_fire(input_string="very naughty boy") -> str:
     TIP: consider using the 'join' method in Python.
     TIP: make sure that you have a 🔥 on both ends of the string.
     """
+    input_string = "very naughty boy"
+    emoji_string = "🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥"
 
-    return None
+    new_string = "".join(
+        [input_string[i] + emoji_string[i] for i in range(len(input_string))]
+    )
+    +emoji_string[len(input_string) :]
+
+    return new_string
 
 
 def pet_filter(letter="a") -> List:

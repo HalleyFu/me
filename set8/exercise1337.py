@@ -62,8 +62,11 @@ def dictionary_please() -> dict:
 
 def is_it_5(some_number) -> bool:
     """Returns True if the argument passed is 5, otherwise returns False."""
-    well_is_it = input()
-    return well_is_it
+    if some_number == 5:
+        well_is_it = True
+        return well_is_it
+    else:
+        return False
 
 
 def take_five(some_number) -> int:
@@ -82,9 +85,7 @@ def greet(name="Towering Timmy") -> str:
     E.g. if given as "Towering Timmy" it should
          return "Well hello, Towering Timmy"
     """
-    input_name = str(input())
-
-    message = f"Well hello, {input_name}"
+    message = f"Well hello, {name}"
 
     return message
 
@@ -103,9 +104,9 @@ def n_counter(search_for_this, input_list=[1, 4, 1, 5, 1, 1]) -> int:
     """Count the number of times search_for_this shows up in the input_list.
     Return an integer.
     """
-    count = input_list.count("search_for_this")
+    count = input_list.count(search_for_this)
 
-    return int(count)
+    return count
 
 
 def fizz_buzz() -> List:
@@ -127,7 +128,7 @@ def fizz_buzz() -> List:
          'FizzBuzz', 16, 17, ...]
     """
     fizz_buzz_list = []
-    for fizz_buzz_list in range[100]:
+    for fizz_buzz_list in range(1, 100):
         if fizz_buzz_list % 3 == 0 and fizz_buzz_list % 5 == 0:
             print("FizzBuzz")
         elif fizz_buzz_list % 3 == 0:
@@ -135,7 +136,8 @@ def fizz_buzz() -> List:
         elif fizz_buzz_list % 5 == 0:
             print("Buzz")
         else:
-            return fizz_buzz_list
+            continue
+    return fizz_buzz_list
 
 
 def set_it_on_fire(input_string="very naughty boy") -> str:
@@ -176,6 +178,11 @@ def pet_filter(letter="a") -> List:
     # fmt: on
     filtered = []
 
+    for i in pets:
+        if letter in i:
+            filtered.append(i)
+        else:
+            continue
     return filtered
 
 

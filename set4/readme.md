@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+For exercise 1, it was sort of hard to understand what JSON was but after some research on the internet it was sort of easier. Now I know that I'm importing data and sorting through the data and returning the data I want into a dictionary. The nesting can get kind of confusing. I also forgot to call the functions in the end which is why my test was not running but I realised the mistake.

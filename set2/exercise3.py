@@ -2,6 +2,9 @@
 """Modify each function until the tests pass."""
 
 
+from ntpath import join
+
+
 def is_odd(a_number):
     """Return True if a_number is odd, and False if a_number is even.
 
@@ -29,19 +32,12 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements.
     As an extra challenge, see if you can get that down to three.
     """
-    if moves == True:
-        if should_move == True:
-            return "No Problem"
-        else:
-            should_move == False
-        return "WD-40"
-
-    if moves == False:
-        if should_move == False:
-            return "No Problem"
-        else:
-            should_move == False
+    if moves and not should_move:
         return "Duct Tape"
+    elif not moves and should_move:
+        return "WD-40"
+    else:
+        return "No Problem"
 
 
 def loops_1a():
@@ -237,7 +233,18 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    pointy_pyramid = []
+    width = 9
+    height = 5
+    for i in range(height):
+        row = []
+        for j in range(width):
+            if abs(j - width // 2) <= i:
+                row.append("*")
+            else:
+                row.append(" ")
+        pointy_pyramid.append(row)
+    return pointy_pyramid
 
 
 def little_printer(some_kind_of_list, exercise_name):

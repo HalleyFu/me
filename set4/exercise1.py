@@ -7,6 +7,8 @@ import requests
 import inspect
 import sys
 
+from requests.api import request
+
 # Handy constants
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
 CWD = os.getcwd()  # The curent working directory
@@ -36,7 +38,18 @@ def get_some_details():
     json_data = open(LOCAL + "/lazyduck.json").read()
 
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+
+    lastName = data["results"][0]["name"]["last"]
+    password = data["results"][0]["login"]["password"]
+    id = data["results"][0]["id"]["value"]
+    postcode = data["results"][0]["location"]["postcode"]
+    postcodePlusID = int(postcode) + int(id)
+
+    return {
+        "lastName": lastName,
+        "password": password,
+        "postcodePlusID": postcodePlusID,
+    }
 
 
 def wordy_pyramid():
@@ -73,9 +86,27 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
-    pass
+    word_pyramid = []
+    for i in range(3, 20, 2):
+        url = (
+            "https://us-central1-waldenpondpress.cloudfunctions.net/"
+            "give_me_a_word?"
+            f"wordlength={i}"
+        )
+        r = requests.get(url)
+        word = r.text
+        word_pyramid.append(word)
 
-
+    for i in range(20, 3, -2):
+        url = (
+            "https://us-central1-waldenpondpress.cloudfunctions.net/"
+            "give_me_a_word?"
+            f"wordlength={i}"
+        )
+        r = requests.get(url)
+        word = r.text
+        word_pyramid.append(word)
+    return word_pyramid
 
 
 def pokedex(low=1, high=5):
@@ -94,11 +125,27 @@ def pokedex(low=1, high=5):
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
-    url = template.format(id=5)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+    pokemon = []
+    for p in range(low, high):
+        url = template.format(id=p)
+        r = requests.get(url)
+        if r.status_code == 200:
+            the_json = json.loads(r.text)
+            pokemon.append(the_json)
+
+    max_height_of_pokemon = 0
+    tallest_pokemon = "num"
+    for p in pokemon:
+        height = p["height"]
+        if height > max_height_of_pokemon:
+            max_height_of_pokemon = height
+            tallest_pokemon = p
+
+    return {
+        "name": tallest_pokemon["name"],
+        "weight": tallest_pokemon["weight"],
+        "height": tallest_pokemon["height"],
+    }
 
 
 def diarist():
@@ -115,6 +162,7 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
+
     pass
 
 
